@@ -575,7 +575,8 @@ namespace Jil.Deserialize
                 GrowDynamicBuffer(ref buffer);
             }
 
-            complete: return new string(buffer, 0, idx);
+            complete:
+            return StringInternHash.Instance.GetString(buffer, idx);
         }
 
         static char ReadHexQuad2(TextReader reader)
