@@ -14,7 +14,7 @@ namespace Jil
     /// <summary>
     /// Fast JSON serializer.
     /// </summary>
-    public sealed class JSON
+    public sealed class StringInterningJSON
     {
         static Options DefaultOptions = Options.Default;
 

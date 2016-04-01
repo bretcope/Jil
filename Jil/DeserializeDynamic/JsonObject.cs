@@ -109,7 +109,7 @@ namespace Jil.DeserializeDynamic
 
         public override string ToString()
         {
-            return JSON.SerializeDynamic(this, Options.ISO8601PrettyPrint);
+            return StringInterningJSON.SerializeDynamic(this, Options.ISO8601PrettyPrint);
         }
     }
 }

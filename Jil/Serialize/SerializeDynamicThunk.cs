@@ -16,7 +16,7 @@ namespace Jil.Serialize
 
         static SerializeDynamicThunk()
         {
-            var serializeGenMtd = typeof(JSON).GetMethods(BindingFlags.Public | BindingFlags.Static).Single(s => s.Name == "Serialize" && s.ReturnType == typeof(void));
+            var serializeGenMtd = typeof(StringInterningJSON).GetMethods(BindingFlags.Public | BindingFlags.Static).Single(s => s.Name == "Serialize" && s.ReturnType == typeof(void));
 
             var t = typeof(T);
             var serialize = serializeGenMtd.MakeGenericMethod(t);

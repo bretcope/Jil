@@ -17,7 +17,7 @@ namespace Jil.Deserialize
         static Hashtable DeserializeFromStreamIndirectCache = new Hashtable();
         static Hashtable DeserializeFromStringIndirectCache = new Hashtable();
 
-        static MethodInfo JSONDeserializeFromStream = typeof(JSON).GetMethod("Deserialize", new[] { typeof(TextReader), typeof(Options) });
+        static MethodInfo JSONDeserializeFromStream = typeof(StringInterningJSON).GetMethod("Deserialize", new[] { typeof(TextReader), typeof(Options) });
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object DeserializeFromStream(TextReader reader, Type type, Options options)
         {
@@ -49,7 +49,7 @@ namespace Jil.Deserialize
             return cached(reader, options);
         }
 
-        static MethodInfo JSONDeserializeFromString = typeof(JSON).GetMethod("Deserialize", new[] { typeof(string), typeof(Options) });
+        static MethodInfo JSONDeserializeFromString = typeof(StringInterningJSON).GetMethod("Deserialize", new[] { typeof(string), typeof(Options) });
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object DeserializeFromString(string reader, Type type, Options options)
         {
