@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Jil.Common;
-using Sigil.NonGeneric;
 using System.Reflection;
-using System.Reflection.Emit;
-using System.Globalization;
+using System.Text;
+using Sigil.NonGeneric;
+using StringInterningJil.Common;
+using StringInterningJil.DeserializeDynamic;
 
-namespace Jil.Deserialize
+namespace StringInterningJil.Deserialize
 {
     class InlineDeserializer<ForType>
     {
@@ -2465,10 +2463,10 @@ namespace Jil.Deserialize
         }
 
         static ConstructorInfo OptionsCons = typeof(Options).GetConstructor(new[] { typeof(bool), typeof(bool), typeof(bool), typeof(DateTimeFormat), typeof(bool), typeof(UnspecifiedDateTimeKindBehavior), typeof(SerializationNameFormat) });
-        static ConstructorInfo ObjectBuilderCons = typeof(Jil.DeserializeDynamic.ObjectBuilder).GetConstructor(new[] { typeof(Options) });
+        static ConstructorInfo ObjectBuilderCons = typeof(ObjectBuilder).GetConstructor(new[] { typeof(Options) });
         void ReadDynamic()
         {
-            using (var dyn = Emit.DeclareLocal<Jil.DeserializeDynamic.ObjectBuilder>())
+            using (var dyn = Emit.DeclareLocal<ObjectBuilder>())
             {
                 Emit.LoadArgument(0);                                                       // TextReader
                 Emit.LoadConstant(false);                                                   // TextReader bool
@@ -2483,11 +2481,11 @@ namespace Jil.Deserialize
                 Emit.StoreLocal(dyn);                                                       // TextReader
                 Emit.LoadLocal(dyn);                                                        // TextReader ObjectBuilder
 
-                var deserializeDyn = Jil.DeserializeDynamic.DynamicDeserializer.GetDeserializeMember(ReadingFromString);
+                var deserializeDyn = DynamicDeserializer.GetDeserializeMember(ReadingFromString);
 
                 Emit.Call(deserializeDyn);                                                  // --empty--
                 Emit.LoadLocal(dyn);                                                        // ObjectBuilder
-                Emit.LoadField(Jil.DeserializeDynamic.ObjectBuilder._BeingBuilt);           // JsonObject
+                Emit.LoadField(ObjectBuilder._BeingBuilt);           // JsonObject
             }
         }
 

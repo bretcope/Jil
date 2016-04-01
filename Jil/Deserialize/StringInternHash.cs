@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jil.Deserialize
+namespace StringInterningJil.Deserialize
 {
     internal class StringInternHash
     {

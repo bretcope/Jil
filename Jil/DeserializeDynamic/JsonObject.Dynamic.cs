@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Jil.Common;
 using System.Dynamic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using StringInterningJil.Common;
 
-namespace Jil.DeserializeDynamic
+namespace StringInterningJil.DeserializeDynamic
 {
     sealed partial class JsonObject : IDynamicMetaObjectProvider
     {

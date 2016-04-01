@@ -1,17 +1,13 @@
-﻿using Sigil;
-using Sigil.NonGeneric;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
+using Sigil;
+using Sigil.NonGeneric;
 
-namespace Jil.Common
+namespace StringInterningJil.Common
 {
     partial class Utils
     {

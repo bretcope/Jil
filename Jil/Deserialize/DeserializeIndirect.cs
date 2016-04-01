@@ -1,16 +1,12 @@
-﻿using Jil.Common;
-using Sigil.NonGeneric;
-using System;
+﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using Sigil.NonGeneric;
+using StringInterningJil.Common;
 
-namespace Jil.Deserialize
+namespace StringInterningJil.Deserialize
 {
     static class DeserializeIndirect
     {

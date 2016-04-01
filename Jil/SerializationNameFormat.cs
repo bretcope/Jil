@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jil
+namespace StringInterningJil
 {
     /// <summary>
     /// Specifies how to serialize names when not specified explicitly via an attribute.

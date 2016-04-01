@@ -1,16 +1,14 @@
-﻿using Jil.Common;
-using Sigil;
-using Sigil.NonGeneric;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using Sigil;
+using Sigil.NonGeneric;
+using StringInterningJil.Common;
 
-namespace Jil.Deserialize
+namespace StringInterningJil.Deserialize
 {
     internal static class NameAutomataConfig
     {

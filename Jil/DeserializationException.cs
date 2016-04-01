@@ -1,12 +1,9 @@
-﻿using Jil.Deserialize;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using StringInterningJil.Deserialize;
 
-namespace Jil
+namespace StringInterningJil
 {
     /// <summary>
     /// An exception thrown when Jil encounters an error when deserializing a stream.

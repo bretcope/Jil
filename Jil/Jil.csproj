@@ -7,7 +7,7 @@
     <ProjectGuid>{73D243E7-DD9B-4546-9B71-4EE8BF5ED6C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jil</RootNamespace>
+    <RootNamespace>StringInterningJil</RootNamespace>
     <AssemblyName>StringInterningJil</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
